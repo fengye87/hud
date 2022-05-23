@@ -1,8 +1,18 @@
 #!/bin/bash
 
-wget -O /usr/local/bin/hud https://github.com/fengye87/hud/releases/download/v0.1.0/hud
-chmod +x /usr/local/bin/hud
-wget -O /etc/systemd/system/hud.service https://raw.githubusercontent.com/fengye87/hud/main/hud.service
+set -euo pipefail
 
-systemctl disable --now getty@.service
+function download {
+  if which curl >/dev/null; then
+    curl -Lo $2 $1
+  else
+    wget -O $2 $1
+  fi
+}
+
+download https://github.com/fengye87/hud/releases/download/v1.0.0/hud /usr/local/bin/hud
+chmod +x /usr/local/bin/hud
+download https://raw.githubusercontent.com/fengye87/hud/main/hud.service /etc/systemd/system/hud.service
+
+systemctl disable --now getty@tty1.service
 systemctl enable --now hud.service
