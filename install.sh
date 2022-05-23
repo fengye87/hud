@@ -14,5 +14,5 @@ download https://github.com/fengye87/hud/releases/download/v1.0.0/hud /usr/local
 chmod +x /usr/local/bin/hud
 download https://raw.githubusercontent.com/fengye87/hud/main/hud.service /etc/systemd/system/hud.service
 
-systemctl disable --now getty@tty1.service
 systemctl enable --now hud.service
+systemctl disable --now getty@tty1.service
