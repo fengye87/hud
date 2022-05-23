@@ -22,6 +22,8 @@ Or if you perfer using _wget_:
 bash <(wget -qO- https://raw.githubusercontent.com/fengye87/hud/main/install.sh)
 ```
 
-## Known Issue
+## Protips
 
-Sometimes the screen's text may seem messed up, press Ctrl+C and everything will come back normal
+✨ Sometimes the screen may look messed up, press `Ctrl+C` and everything will back to normal.
+
+✨ Try `Ctrl+Alt+F2` if you want to login (and `Ctrl+Alt+F1` to back to HUD).
