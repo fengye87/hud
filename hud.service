@@ -1,0 +1,10 @@
+[Service]
+ExecStart=/usr/local/bin/hud
+StandardInput=tty
+StandardOutput=tty
+TTYPath=/dev/tty1
+TTYReset=yes
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
