@@ -15,8 +15,10 @@ jobs:
         with:
           go-version: 1.17.8
 
-      - run: go build -o hud main.go
+      - run: |
+          GOARCH=amd64 go build -o hud-linux-x86_64 main.go
+          GOARCH=arm64 go build -o hud-linux-aarch64 main.go
 
       - uses: softprops/action-gh-release@v1
         with:
-          files: hud
+          files: hud-*
