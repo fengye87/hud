@@ -11,8 +11,8 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/docker/libnetwork/resolvconf"
-	"github.com/docker/libnetwork/types"
+	"github.com/docker/docker/libnetwork/resolvconf"
+	"github.com/docker/docker/libnetwork/types"
 	"github.com/gdamore/tcell/v2"
 	"github.com/rivo/tview"
 	"github.com/vishvananda/netlink"
@@ -157,7 +157,7 @@ func getDefaultLink() (netlink.Link, error) {
 		}
 
 		for _, route := range routes {
-			if route.Dst == nil {
+			if route.Dst == nil || route.Dst.IP.IsUnspecified() {
 				return link, nil
 			}
 		}
