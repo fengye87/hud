@@ -10,7 +10,7 @@ function download {
   fi
 }
 
-download https://github.com/fengye87/hud/releases/download/v1.0.1/hud-linux-$(uname -m) /usr/local/bin/hud
+download https://github.com/fengye87/hud/releases/download/v1.0.2/hud-linux-$(uname -m) /usr/local/bin/hud
 chmod +x /usr/local/bin/hud
 download https://raw.githubusercontent.com/fengye87/hud/main/hud.service /etc/systemd/system/hud.service
 
